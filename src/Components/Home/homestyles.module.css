@@ -105,3 +105,13 @@ select{
     font-style: oblique;
     color: #1d4903;
 }
+button{
+    outline: none;
+    border: none;
+    padding: 7px;
+    color: white;
+    font-size: 16px;
+    font-style: oblique;
+    background: #44b403;
+    border-radius: 10px;
+}

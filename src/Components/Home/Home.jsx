@@ -256,7 +256,20 @@ const Home = () => {
     setCharCount(0);
     setPage(1);
   };
-
+const allClearFilter =() =>{
+  setSpicesList([]);
+  setStatusList([]);
+  setgenderList([]);
+  const options = {
+    pathname: location.pathname,
+    search: `?${createSearchParams()}`,
+  };
+  navigate(options, { replace: true });
+  setCount(count + 1);
+    setCharCount(0);
+    setPage(1);
+  
+}
   return (
     <>
       <div className={homeStyles.home_page_container}>
@@ -270,6 +283,7 @@ const Home = () => {
           getSpeciesFilter={getSpeciesFilter}
           charCount={charCount}
           totalItems={totalItems}
+          allClearFilter={allClearFilter}
         />
 
         <div className={homeStyles.char_card_container}>

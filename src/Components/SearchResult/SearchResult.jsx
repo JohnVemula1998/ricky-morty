@@ -378,14 +378,28 @@ const SearchResult = () => {
   }
 
 
-
+  const allClearFilter =() =>{
+    setSpicesList([]);
+    setStatusList([]);
+    setgenderList([]);
+    setFilteredData();
+    const options = {
+      pathname: location.pathname,
+      search: `?${createSearchParams()}`,
+    };
+    navigate(options, { replace: true });
+    setCount(count + 1);
+      setCharCount(0);
+      setPage(1);
+  }
 
   return (
     <>
       <div className={homeStyles.home_page_container}>
         <FilterCharacters homeStyles={homeStyles}
         checkCharStatus={checkCharStatus} checkCharSpecies={checkCharSpecies}
-        checkCharGender={checkCharGender} getStatusFilter={getStatusFilter} getGenderFilter={getGenderFilter}  getSpeciesFilter={getSpeciesFilter} charCount={charCount} totalItems={totalItems}/>
+        checkCharGender={checkCharGender} getStatusFilter={getStatusFilter} getGenderFilter={getGenderFilter}  getSpeciesFilter={getSpeciesFilter} charCount={charCount} totalItems={totalItems}
+        allClearFilter={allClearFilter}/>
         
         <div className={homeStyles.char_card_container}>
           {characterData &&
